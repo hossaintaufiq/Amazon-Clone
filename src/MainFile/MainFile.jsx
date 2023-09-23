@@ -12,7 +12,7 @@ const MainFile = () => {
             <nav className="">
                 <ul className="flex gap-5">
                     <li>
-                        <a href="/home">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
                         <a href="/about">About</a>
