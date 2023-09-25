@@ -1,8 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Footer from "../pages/Footer/Footer";
+import Spinner from "../Components/Spinner/Spinner";
 
 
 const MainFile = () => {
+
+
+    const nevagation =useNavigation();
+
+    const isLoaddingData=nevagation.state=="loading";
+    console.log(isLoaddingData);
+
     return (
         <div className="w-3/4 mx-auto ">
            <section className="flex justify-between px-3 rounded-md shadow-md py-7">
@@ -28,10 +36,7 @@ const MainFile = () => {
                 </ul>
             </nav>
            </section>
-           <div className="min-h-screen">
-           <Outlet />
-
-           </div>
+           {isLoaddingData? (<Spinner/>):(<div className="min-h-screen"> <Outlet /></div>)}
            
            <Footer/>
         </div>
